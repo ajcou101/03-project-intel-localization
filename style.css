@@ -1,3 +1,17 @@
+/* Centered instructions under the timeline */
+.timeline-instructions {
+  text-align: center;
+  font-size: 1.1rem;
+  margin-top: 16px;
+  color: #333;
+}
+/* Timeline background wrapper for cards and instructions */
+.timeline-bg {
+  background-color: #f8f9fa; /* Light grey to match cards/newsletter */
+  border-radius: 12px;
+  padding: 32px 0 16px 0;
+  margin-bottom: 100px;
+}
 /* Custom color for 'Learn More' buttons only */
 .learn-more-btn {
   background-color: #003366 !important;
@@ -40,7 +54,6 @@ body {
   padding: 0;
   border-radius: 0;
   overflow: hidden;
-  margin-bottom: 50px
 }
 
 /* Logo area in hero */
@@ -133,7 +146,7 @@ body {
   overflow-x: auto;
   padding: 16px 32px;
   max-width: 1000px;
-  margin: 16px auto 0 auto;
+  margin: 50px auto 0 auto;
   scroll-snap-type: x mandatory;
 }
 
@@ -215,9 +228,11 @@ body {
   opacity: 1;
 }
 
-/* Add space below the newsletter section before the footer */
+/* Add space below the newsletter section before the footer and set background to match cards */
 .newsletter-section {
-  margin-bottom: 100px;
+  background-color: #f8f9fa;
+  padding-top: 48px;
+  padding-bottom: 48px;
 }
 
 /* Responsive timeline and cards */
