@@ -1,0 +1,204 @@
+/* Add your CSS here */
+
+/* Remove default margin and padding from html and body */
+html,
+body {
+  margin: 0; /* No space around the edges */
+  padding: 0; /* No space inside the edges */
+  box-sizing: border-box;
+}
+
+/* Styling for main body of the webpage*/
+body {
+  background-color: #f0f0f0;
+  color: #000000;
+  font-family: Arial, sans-serif;
+}
+
+/* Hero section styling */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Subtle Intel blue gradient background */
+  background: linear-gradient(270deg, #0072c6 0%, #0072c6 40%, #00a2d7 100%);
+  color: #ffffff;
+  width: 100vw; /* Fill the viewport width */
+  min-width: 100vw;
+  margin: 0;
+  box-sizing: border-box;
+  height: 400px;
+  padding: 0; /* Remove padding so blue goes edge to edge */
+  border-radius: 0; /* No rounded edges */
+  overflow: hidden; /* Prevent overflow */
+}
+
+/* Logo container for dark background */
+/* No rounded edges, fills height of hero */
+.logo-bg {
+  background-color: #003366;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 400px;
+  margin-right: 40px;
+  padding: 0 75px;
+  box-sizing: border-box;
+  border-radius: 0; /* No rounded edges */
+}
+
+/* Hero image styling */
+.hero img {
+  width: 240px;
+  height: auto;
+}
+
+/* Hero header text styling */
+.hero-text h1 {
+  font-size: 2.8em;
+  font-weight: bold;
+  margin-bottom: 18px;
+}
+
+/* Hero paragraph text styling */
+.hero-text p {
+  font-size: 1.4em;
+  margin-bottom: 24px;
+  max-width: 800px;
+}
+
+/* Responsive: stack logo above text on small screens */
+@media (max-width: 600px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    height: auto;
+    padding: 0;
+    min-width: 100vw;
+    width: 100vw;
+    border-radius: 0;
+    overflow: hidden;
+  }
+  .logo-bg {
+    margin-right: 0;
+    margin-bottom: 16px;
+    width: 100vw;
+    max-width: 100vw;
+    height: 180px;
+    padding: 0 16px;
+    box-sizing: border-box;
+    border-radius: 0; /* No rounded edges */
+  }
+  .hero-text {
+    min-height: 180px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .hero img {
+    width: 175px;
+    margin-right: 0;
+    margin-bottom: 16px;
+  }
+  .hero-text h1 {
+    font-size: 1.4em;
+    margin-bottom: 0;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    word-break: break-word;
+  }
+  .hero-text p {
+    font-size: 1em;
+    padding: 0 4px;
+    word-break: break-word;
+    margin-bottom: 24px;
+  }
+}
+
+/* Styling for the timeline container */
+.timeline {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  padding: 16px 32px; /* Add left and right padding for hover space */
+  max-width: 1000px;
+  margin: 16px auto 0 auto;
+  scroll-snap-type: x mandatory;
+}
+
+/* Styling for each card in the timeline */
+.timeline-card {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  padding: 16px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  width: 250px;
+  height: 250px;
+  flex: 0 0 auto;
+  position: relative; /* For positioning hover state */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  scroll-snap-align: start;
+}
+
+/*Styling for images within the timeline cards */
+.timeline-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  margin-bottom: 8px;
+  display: block;
+}
+
+/* Card hover state styling */
+.card-hover-state {
+  display: none; /* Hide by default */
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 51, 102, 0.95); /* Intel blue with transparency */
+  color: #fff;
+  padding: 16px;
+  box-sizing: border-box;
+  z-index: 1;
+  text-align: left;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+/* Hover controls for the cards */
+.timeline-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.timeline-card:hover .card-hover-state {
+  display: block;
+  opacity: 1;
+}
+
+/* Media query for making the timeline responsive */
+@media (max-width: 600px) {
+  .timeline {
+    flex-direction: column;
+  }
+
+  .timeline-card {
+    width: 100%;
+    max-width: 350px;
+    aspect-ratio: 1/1;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* Styling for the text below the timeline */
+body > p {
+  text-align: center;
+  margin-top: 16px;
+}
