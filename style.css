@@ -1,40 +1,49 @@
-/* Add your CSS here */
-
+/* Custom color for 'Learn More' buttons only */
+.learn-more-btn {
+  background-color: #003366 !important;
+  border-color: #003366 !important;
+  color: #fff !important;
+}
+.learn-more-btn:hover,
+.learn-more-btn:focus {
+  background-color: #00509e !important;
+  border-color: #00509e !important;
+  color: #fff !important;
+}
 /* Remove default margin and padding from html and body */
 html,
 body {
-  margin: 0; /* No space around the edges */
-  padding: 0; /* No space inside the edges */
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
-/* Styling for main body of the webpage*/
+/* Main body styling */
 body {
   background-color: #f0f0f0;
-  color: #000000;
+  color: #000;
   font-family: Arial, sans-serif;
 }
 
-/* Hero section styling */
+/* Hero section (top banner) */
 .hero {
   display: flex;
   align-items: center;
   justify-content: center;
-  /* Subtle Intel blue gradient background */
   background: linear-gradient(270deg, #0072c6 0%, #0072c6 40%, #00a2d7 100%);
-  color: #ffffff;
-  width: 100vw; /* Fill the viewport width */
+  color: #fff;
+  width: 100vw;
   min-width: 100vw;
   margin: 0;
   box-sizing: border-box;
   height: 400px;
-  padding: 0; /* Remove padding so blue goes edge to edge */
-  border-radius: 0; /* No rounded edges */
-  overflow: hidden; /* Prevent overflow */
+  padding: 0;
+  border-radius: 0;
+  overflow: hidden;
+  margin-bottom: 50px
 }
 
-/* Logo container for dark background */
-/* No rounded edges, fills height of hero */
+/* Logo area in hero */
 .logo-bg {
   background-color: #003366;
   display: flex;
@@ -45,30 +54,30 @@ body {
   margin-right: 40px;
   padding: 0 75px;
   box-sizing: border-box;
-  border-radius: 0; /* No rounded edges */
+  border-radius: 0;
 }
 
-/* Hero image styling */
+/* Hero image */
 .hero img {
   width: 240px;
   height: auto;
 }
 
-/* Hero header text styling */
+/* Hero main heading */
 .hero-text h1 {
   font-size: 2.8em;
   font-weight: bold;
   margin-bottom: 18px;
 }
 
-/* Hero paragraph text styling */
+/* Hero subheading */
 .hero-text p {
   font-size: 1.4em;
   margin-bottom: 24px;
   max-width: 800px;
 }
 
-/* Responsive: stack logo above text on small screens */
+/* Responsive hero: stack logo above text on small screens */
 @media (max-width: 600px) {
   .hero {
     flex-direction: column;
@@ -88,7 +97,7 @@ body {
     height: 180px;
     padding: 0 16px;
     box-sizing: border-box;
-    border-radius: 0; /* No rounded edges */
+    border-radius: 0;
   }
   .hero-text {
     min-height: 180px;
@@ -117,18 +126,18 @@ body {
   }
 }
 
-/* Styling for the timeline container */
+/* Timeline container */
 .timeline {
   display: flex;
   gap: 16px;
   overflow-x: auto;
-  padding: 16px 32px; /* Add left and right padding for hover space */
+  padding: 16px 32px;
   max-width: 1000px;
   margin: 16px auto 0 auto;
   scroll-snap-type: x mandatory;
 }
 
-/* Styling for each card in the timeline */
+/* Timeline cards */
 .timeline-card {
   background-color: #fff;
   border: 1px solid #ccc;
@@ -138,12 +147,38 @@ body {
   width: 250px;
   height: 250px;
   flex: 0 0 auto;
-  position: relative; /* For positioning hover state */
+  position: relative;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   scroll-snap-align: start;
+  font-family: Arial, sans-serif;
 }
 
-/*Styling for images within the timeline cards */
+/* Timeline and card titles (years, section titles) */
+.timeline-card h2,
+.below-timeline-cards h2,
+.newsletter-section h2 {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin: 0 0 8px 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Timeline card subtitles */
+.timeline-card h3 {
+  font-size: 1.1em;
+  font-weight: normal;
+  margin: 0 0 10px 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Timeline card text */
+.timeline-card p {
+  font-size: 1em;
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Timeline card images */
 .timeline-card img {
   width: 100%;
   height: auto;
@@ -152,15 +187,15 @@ body {
   display: block;
 }
 
-/* Card hover state styling */
+/* Timeline card hover state */
 .card-hover-state {
-  display: none; /* Hide by default */
+  display: none;
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 51, 102, 0.95); /* Intel blue with transparency */
+  background: rgba(0, 51, 102, 0.95);
   color: #fff;
   padding: 16px;
   box-sizing: border-box;
@@ -170,23 +205,26 @@ body {
   transition: opacity 0.2s ease;
 }
 
-/* Hover controls for the cards */
+/* Show hover state on card hover */
 .timeline-card:hover {
   transform: scale(1.05);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
-
 .timeline-card:hover .card-hover-state {
   display: block;
   opacity: 1;
 }
 
-/* Media query for making the timeline responsive */
+/* Add space below the newsletter section before the footer */
+.newsletter-section {
+  margin-bottom: 100px;
+}
+
+/* Responsive timeline and cards */
 @media (max-width: 600px) {
   .timeline {
     flex-direction: column;
   }
-
   .timeline-card {
     width: 100%;
     max-width: 350px;
@@ -197,8 +235,9 @@ body {
   }
 }
 
-/* Styling for the text below the timeline */
+/* Text below the timeline */
 body > p {
   text-align: center;
   margin-top: 16px;
+  margin-bottom: 100px;
 }

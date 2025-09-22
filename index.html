@@ -11,9 +11,12 @@
       integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
       crossorigin="anonymous"
     />
+    <!-- Font Awesome CDN for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
   </head>
   <body>
-    <!-- Header / Hero Section -->
+  <!-- Hero Section (Top Banner) -->
     <header class="hero">
       <div class="logo-bg">
         <img src="img/intel-header-logo.svg" alt="Intel Logo" />
@@ -30,7 +33,7 @@
       </div>
     </header>
 
-    <!-- Timeline Cards Section -->
+  <!-- Timeline Cards Section -->
     <section class="timeline">
       <!-- Card 1: 1968 -->
       <div class="timeline-card">
@@ -167,57 +170,57 @@
         </div>
       </div>
     </section>
-    <p>Scroll to view timeline | Hover over cards to learn more!</p>
+  <p>Scroll to view timeline | Hover over cards to learn more!</p>
 
-    <!-- 3-Column Content Section using Bootstrap grid -->
-    <section class="container my-5">
+  <!-- Three-Column Info Section -->
+  <section class="container my-5 mb-5 below-timeline-cards" style="margin-bottom:100px !important;">
       <div class="row">
         <!-- Column 1 -->
         <div class="col-12 col-md-4 mb-4">
           <div class="p-3 border bg-light h-100">
-            <h2>RISE Strategy</h2>
+            <h2><i class="fa-solid fa-earth-americas me-2"></i>RISE Strategy</h2>
             <p>
               Under its RISE (Responsible, Inclusive, Sustainable, Enabling)
               strategy, Intel sets ambitious 2030 goals, including driving
               industry-wide progress on climate action, water stewardship, and
               waste reduction.
             </p>
-            <a href="#" class="btn btn-primary mt-2">Learn More</a>
+            <a href="#" class="btn btn-primary learn-more-btn mt-2">Learn More</a>
           </div>
         </div>
         <!-- Column 2 -->
         <div class="col-12 col-md-4 mb-4">
           <div class="p-3 border bg-light h-100">
-            <h2>Commitment</h2>
+            <h2><i class="fa-solid fa-handshake me-2"></i>Commitment</h2>
             <p>
               In 2022, Intel pledged to achieve net-zero greenhouse gas
               emissions (Scope 1 and 2) by 2040. This commitment builds on
               decades of environmental initiatives and partnerships across the
               semiconductor industry.
             </p>
-            <a href="#" class="btn btn-primary mt-2">Learn More</a>
+            <a href="#" class="btn btn-primary learn-more-btn mt-2">Learn More</a>
           </div>
         </div>
         <!-- Column 3 -->
         <div class="col-12 col-md-4 mb-4">
           <div class="p-3 border bg-light h-100">
-            <h2>Water &amp; Waste</h2>
+            <h2><i class="fa-solid fa-droplet me-2"></i>Water &amp; Waste</h2>
             <p>
               Intel conserves billions of gallons of water annually and
               collaborates with local communities to restore watersheds. Intel
               also upcycles and recycles materials to reduce waste and advance a
               circular economy.
             </p>
-            <a href="#" class="btn btn-primary mt-2">Learn More</a>
+            <a href="#" class="btn btn-primary learn-more-btn mt-2">Learn More</a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Subscription Form -->
-    <section>
+  <!-- Newsletter Subscription Form -->
+  <section class="newsletter-section">
       <div class="container my-5">
-        <h2 class="mb-4 text-center">Subscribe to our Newsletter</h2>
+  <h2 class="mb-4 text-center"><i class="fa-regular fa-envelope me-2"></i>Subscribe to our Newsletter</h2>
         <form class="row g-3 justify-content-center">
           <div class="col-12 col-md-6">
             <input
@@ -229,7 +232,7 @@
             />
           </div>
           <div class="col-12 col-md-2 d-flex align-items-end">
-            <button type="submit" class="btn btn-primary w-100">
+            <button type="submit" class="btn btn-primary learn-more-btn w-100">
               Subscribe
             </button>
           </div>
