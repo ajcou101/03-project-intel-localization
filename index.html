@@ -13,27 +13,40 @@
       crossorigin="anonymous"
     />
     <script>
-      // Dynamically switch to RTL if user's language is RTL
+      // RTL/LTR switching based on <html> lang attribute, including Google Translate changes
       document.addEventListener("DOMContentLoaded", function () {
         const rtlLangs = ["ar", "he", "fa", "ur"];
         const html = document.getElementById("html-root");
         const bootstrap = document.getElementById("bootstrap-css");
-        const userLang = (
-          navigator.language ||
-          navigator.userLanguage ||
-          "en"
-        ).split("-")[0];
-        if (rtlLangs.includes(userLang)) {
-          html.setAttribute("dir", "rtl");
-          html.setAttribute("lang", userLang);
-          bootstrap.href =
-            "https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.rtl.min.css";
-        } else {
-          html.setAttribute("dir", "ltr");
-          html.setAttribute("lang", userLang);
-          bootstrap.href =
-            "https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css";
+
+        function updateDirection() {
+          const pageLang = html.getAttribute("lang") || "en";
+          if (rtlLangs.includes(pageLang)) {
+            html.setAttribute("dir", "rtl");
+            bootstrap.href =
+              "https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.rtl.min.css";
+          } else {
+            html.setAttribute("dir", "ltr");
+            bootstrap.href =
+              "https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css";
+          }
         }
+
+        // Initial direction set
+        updateDirection();
+
+        // Observe changes to the lang attribute (Google Translate updates this)
+        const observer = new MutationObserver(function (mutations) {
+          mutations.forEach(function (mutation) {
+            if (
+              mutation.type === "attributes" &&
+              mutation.attributeName === "lang"
+            ) {
+              updateDirection();
+            }
+          });
+        });
+        observer.observe(html, { attributes: true, attributeFilter: ["lang"] });
       });
     </script>
     <!-- Font Awesome for icons -->
