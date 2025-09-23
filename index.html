@@ -47,7 +47,7 @@
   <body>
     <!-- Hero Section -->
     <header class="hero">
-      <div class="logo-bg">
+      <div class="logo-bg logo-center">
         <img src="img/intel-header-logo.svg" alt="Intel Logo" />
       </div>
       <div class="hero-text">
@@ -242,7 +242,7 @@
     <!-- Newsletter Subscription Form -->
     <section class="newsletter-section">
       <div class="container my-5">
-        <h2 class="mb-4 text-center">
+        <h2 class="mb-4 text-center w-100">
           <span class="icon-title"
             ><i class="fa-regular fa-envelope"></i>Subscribe to our
             Newsletter</span
@@ -266,6 +266,22 @@
         </form>
       </div>
     </section>
+    <style>
+      /* Center the Intel logo vertically and horizontally in the dark background */
+      .logo-center {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+      }
+      /* Ensure the newsletter heading is always centered */
+      .newsletter-section h2 {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      }
+    </style>
 
     <!-- Footer -->
     <footer class="bg-dark text-light py-4">
