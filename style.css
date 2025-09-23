@@ -64,7 +64,7 @@ body {
   justify-content: center;
   height: 100%;
   width: 400px;
-  margin-right: 40px;
+  margin-inline-end: 40px; /* Logical spacing for LTR and RTL */
   padding: 0 75px;
   box-sizing: border-box;
   border-radius: 0;
@@ -103,7 +103,7 @@ body {
     overflow: hidden;
   }
   .logo-bg {
-    margin-right: 0;
+    margin-inline-end: 0;
     margin-bottom: 16px;
     width: 100vw;
     max-width: 100vw;
@@ -213,7 +213,7 @@ body {
   padding: 16px;
   box-sizing: border-box;
   z-index: 1;
-  text-align: left;
+  text-align: start;
   opacity: 0;
   transition: opacity 0.2s ease;
 }
