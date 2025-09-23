@@ -5,14 +5,14 @@
   margin-top: 16px;
   color: #333;
 }
-/* Timeline background wrapper for cards and instructions */
+
 .timeline-bg {
-  background-color: #f8f9fa; /* Light grey to match cards/newsletter */
+  background-color: #f8f9fa;
   border-radius: 12px;
   padding: 32px 0 16px 0;
   margin-bottom: 100px;
 }
-/* Custom color for 'Learn More' buttons only */
+
 .learn-more-btn {
   background-color: #003366 !important;
   border-color: #003366 !important;
@@ -24,7 +24,7 @@
   border-color: #00509e !important;
   color: #fff !important;
 }
-/* Remove default margin and padding from html and body */
+
 html,
 body {
   margin: 0;
@@ -32,14 +32,12 @@ body {
   box-sizing: border-box;
 }
 
-/* Main body styling */
 body {
   background-color: #f0f0f0;
   color: #000;
   font-family: Arial, sans-serif;
 }
 
-/* Hero section (top banner) */
 .hero {
   display: flex;
   align-items: center;
@@ -56,7 +54,6 @@ body {
   overflow: hidden;
 }
 
-/* Logo area in hero */
 .logo-bg {
   background-color: #003366;
   display: flex;
@@ -64,33 +61,39 @@ body {
   justify-content: center;
   height: 100%;
   width: 400px;
-  margin-inline-end: 40px; /* Logical spacing for LTR and RTL */
-  padding: 0 75px;
+  margin-inline-end: 40px;
+  padding: 0 75px 0 0;
   box-sizing: border-box;
   border-radius: 0;
 }
 
-/* Hero image */
+.icon-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.icon-title i,
+.icon-title svg {
+  margin-inline-end: 8px;
+}
+
 .hero img {
   width: 240px;
   height: auto;
 }
 
-/* Hero main heading */
 .hero-text h1 {
   font-size: 2.8em;
   font-weight: bold;
   margin-bottom: 18px;
 }
 
-/* Hero subheading */
 .hero-text p {
   font-size: 1.4em;
   margin-bottom: 24px;
   max-width: 800px;
 }
 
-/* Responsive hero: stack logo above text on small screens */
 @media (max-width: 600px) {
   .hero {
     flex-direction: column;
@@ -139,7 +142,6 @@ body {
   }
 }
 
-/* Timeline container */
 .timeline {
   display: flex;
   gap: 16px;
@@ -150,7 +152,6 @@ body {
   scroll-snap-type: x mandatory;
 }
 
-/* Timeline cards */
 .timeline-card {
   background-color: #fff;
   border: 1px solid #ccc;
@@ -166,7 +167,6 @@ body {
   font-family: Arial, sans-serif;
 }
 
-/* Timeline and card titles (years, section titles) */
 .timeline-card h2,
 .below-timeline-cards h2,
 .newsletter-section h2 {
@@ -176,7 +176,6 @@ body {
   font-family: Arial, sans-serif;
 }
 
-/* Timeline card subtitles */
 .timeline-card h3 {
   font-size: 1.1em;
   font-weight: normal;
@@ -184,14 +183,12 @@ body {
   font-family: Arial, sans-serif;
 }
 
-/* Timeline card text */
 .timeline-card p {
   font-size: 1em;
   margin: 0;
   font-family: Arial, sans-serif;
 }
 
-/* Timeline card images */
 .timeline-card img {
   width: 100%;
   height: auto;
@@ -200,7 +197,6 @@ body {
   display: block;
 }
 
-/* Timeline card hover state */
 .card-hover-state {
   display: none;
   position: absolute;
@@ -218,7 +214,6 @@ body {
   transition: opacity 0.2s ease;
 }
 
-/* Show hover state on card hover */
 .timeline-card:hover {
   transform: scale(1.05);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
@@ -228,14 +223,12 @@ body {
   opacity: 1;
 }
 
-/* Add space below the newsletter section before the footer and set background to match cards */
 .newsletter-section {
   background-color: #f8f9fa;
   padding-top: 48px;
   padding-bottom: 48px;
 }
 
-/* Responsive timeline and cards */
 @media (max-width: 600px) {
   .timeline {
     flex-direction: column;
@@ -250,7 +243,6 @@ body {
   }
 }
 
-/* Text below the timeline */
 body > p {
   text-align: center;
   margin-top: 16px;
