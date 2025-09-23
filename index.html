@@ -14,25 +14,27 @@
     />
     <script>
       // Dynamically switch to RTL if user's language is RTL
-      const rtlLangs = ["ar", "he", "fa", "ur"];
-      const html = document.getElementById("html-root");
-      const bootstrap = document.getElementById("bootstrap-css");
-      const userLang = (
-        navigator.language ||
-        navigator.userLanguage ||
-        "en"
-      ).split("-")[0];
-      if (rtlLangs.includes(userLang)) {
-        html.setAttribute("dir", "rtl");
-        html.setAttribute("lang", userLang);
-        bootstrap.href =
-          "https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.rtl.min.css";
-      } else {
-        html.setAttribute("dir", "ltr");
-        html.setAttribute("lang", userLang);
-        bootstrap.href =
-          "https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css";
-      }
+      document.addEventListener("DOMContentLoaded", function () {
+        const rtlLangs = ["ar", "he", "fa", "ur"];
+        const html = document.getElementById("html-root");
+        const bootstrap = document.getElementById("bootstrap-css");
+        const userLang = (
+          navigator.language ||
+          navigator.userLanguage ||
+          "en"
+        ).split("-")[0];
+        if (rtlLangs.includes(userLang)) {
+          html.setAttribute("dir", "rtl");
+          html.setAttribute("lang", userLang);
+          bootstrap.href =
+            "https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.rtl.min.css";
+        } else {
+          html.setAttribute("dir", "ltr");
+          html.setAttribute("lang", userLang);
+          bootstrap.href =
+            "https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css";
+        }
+      });
     </script>
     <!-- Font Awesome CDN for icons -->
     <link
